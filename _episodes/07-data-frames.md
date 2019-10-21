@@ -646,6 +646,31 @@ typeof(gapminder$country)
 ~~~
 {: .output}
 
+> ## Challenge 3
+>
+> Take a moment to explore the gapminder dataset using the commnads `str` and `typeof`.
+> Use what you've learned about R's basic data types, factors, and vectors,
+> to explain what everything that `str` prints out for gapminder means.
+>
+> Can you determine what data each column holds? Do the data types make sense for these types of data? If not, what data type would you recommend?
+>
+> If there are any parts you can't interpret, discuss with your neighbors!
+>
+> > ## Solution to Challenge 3
+> >
+> > The object `gapminder` is a data frame with 1704 entries and 6 columns.
+> >
+> > The 6 columns contain the following data and types:
+> > - `country`: a factor with 142 levels - The country of which the rest of the data in the row is for.
+> > - `continent`: a factor with 5 levels - The continent in which the target country is located.
+> > - `year`: integer vector - The year for which the data was obtained
+> > - `pop`: integer vector - The total population in the target country for the target year.
+> > - `lifeExp`: numeric vector - The average life expectancy for the target country during the target year.
+> > - `gdpPercap`: numeric vector - The average GDP per capita for the target country during the target year.
+> >
+> > 
+> {: .solution}
+{: .challenge}
 
 
 ~~~
@@ -790,33 +815,6 @@ head(gapminder)
 ~~~
 {: .output}
 
-
-> ## Challenge 3
->
-> Read the output of `str(gapminder)` again;
-> this time, use what you've learned about R's basic data types, factors, and vectors,
-> as well as the output of functions like `colnames` and `dim`
-> to explain what everything that `str` prints out for gapminder means.
->
-> Can you determine what data each column holds? Do the data types make sense for these types of data? If not, what data type would you recommend?
->
-> If there are any parts you can't interpret, discuss with your neighbors!
->
-> > ## Solution to Challenge 3
-> >
-> > The object `gapminder` is a data frame with 1704 entries and 6 columns.
-> >
-> > The 6 columns contain the following data and types:
-> > - `country`: a factor with 142 levels - The country of which the rest of the data in the row is for.
-> > - `continent`: a factor with 5 levels - The continent in which the target country is located.
-> > - `year`: integer vector - The year for which the data was obtained
-> > - `pop`: integer vector - The total population in the target country for the target year.
-> > - `lifeExp`: numeric vector - The average life expectancy for the target country during the target year.
-> > - `gdpPercap`: numeric vector - The average GDP per capita for the target country during the target year.
-> >
-> > 
-> {: .solution}
-{: .challenge}
 
 ### Subsetting Data Frames
 

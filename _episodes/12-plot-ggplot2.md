@@ -53,27 +53,6 @@ know that we're creating a new plot, and any of the arguments we give the
 `ggplot` function are the *global* options for the plot: they apply to all
 layers on the plot.
 
-~~~
-library("ggplot2")
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
-  geom_point()
-~~~
-{: .r}
-
-<img src="../fig/rmd-08-lifeExp-vs-gdpPercap-scatter-1.png" title="plot of chunk lifeExp-vs-gdpPercap-scatter" alt="plot of chunk lifeExp-vs-gdpPercap-scatter" style="display: block; margin: auto;" />
-
-We've passed in two arguments to `ggplot`. First, we tell `ggplot` what data we
-want to show on our figure, in this example the gapminder data we read in
-earlier. For the second argument we passed in the `aes` function, which
-tells `ggplot` how variables in the **data** map to *aesthetic* properties of
-the figure, in this case the **x** and **y** locations. Here we told `ggplot` we
-want to plot the "gdpPercap" column of the gapminder data frame on the x-axis, and
-the "lifeExp" column on the y-axis. Notice that we didn't need to explicitly
-pass `aes` these columns (e.g. `x = gapminder[, "gdpPercap"]`), this is because
-`ggplot` is smart enough to know to look in the **data** for that column!
-
-Other options that can be set with the `aes` function include color, size, transparency and shape. We will talk more about that later.
-
 By itself, the call to `ggplot` isn't enough to draw a figure:
 
 ~~~
@@ -88,7 +67,6 @@ do by adding a new **geom** layer. In our example, we used `geom_point`, which
 tells `ggplot` we want to visually represent the relationship between **x** and
 **y** as a scatterplot of points:
 
-
 ~~~
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
   geom_point()
@@ -96,6 +74,19 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 {: .r}
 
 <img src="../fig/rmd-08-lifeExp-vs-gdpPercap-scatter2-1.png" title="plot of chunk lifeExp-vs-gdpPercap-scatter2" alt="plot of chunk lifeExp-vs-gdpPercap-scatter2" style="display: block; margin: auto;" />
+
+We've passed in two arguments to `ggplot`. First, we tell `ggplot` what data we
+want to show on our figure, in this example the gapminder data we read in
+earlier. For the second argument we passed in the `aes` function, which
+tells `ggplot` how variables in the **data** map to *aesthetic* properties of
+the figure, in this case the **x** and **y** locations. Here we told `ggplot` we
+want to plot the "gdpPercap" column of the gapminder data frame on the x-axis, and
+the "lifeExp" column on the y-axis. Notice that we didn't need to explicitly
+pass `aes` these columns (e.g. `x = gapminder[, "gdpPercap"]`), this is because
+`ggplot` is smart enough to know to look in the **data** for that column!
+
+Other options that can be set with the `aes` function include color, size, transparency and shape. We will talk more about that later.
+
 
 > ## Challenge 1
 >

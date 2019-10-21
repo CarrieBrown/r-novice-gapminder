@@ -567,7 +567,7 @@ permalink: /challenges/
 >{: .output}
 >
 >
-> Can you come up with a command that will only return of the 'a' values and a different command
+> Can you come up with a command that will only return one of the 'a' values and a different command
 > that will return all of the 'a' values? Does your answer differ from your neighbors?
 >
 > > ## Solution to challenge 3
@@ -1314,8 +1314,8 @@ permalink: /challenges/
 > >lifeExp_2countries_bycontinents <- gapminder %>%
 > >    filter(year==2002) %>%
 > >    group_by(continent) %>%
-> >    sample_n(2) %>%
 > >    summarize(mean_lifeExp=mean(lifeExp)) %>%
+> >    sample_n(2) %>%
 > >    arrange(desc(mean_lifeExp))
 > >~~~
 > >{: .r}
@@ -1537,11 +1537,6 @@ by using the `?` and `vignette` commands.
 
 #### [Supplemental Lessons](https://carriebrown.github.io/r-novice-gapminder-2/)
 Additional R topics that we could not cover today.
-
-#### R Club at UNL
-The R Club meets on East Campus twice a month. It is headed by Leonardo Bastos, a PhD student in Agronomy
-and Horticulture. You can [email](mailto: lmbastos@unl.edu) Leonardo for more information, or check out
-the club's [GitHub page](https://github.com/ahgsa-unl) which contains previous meeting topics.
 
 #### [RStudio cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
 R quick reference guides including today's handouts and more!

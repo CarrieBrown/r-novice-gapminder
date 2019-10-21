@@ -272,93 +272,6 @@ x
 ~~~
 {: .output}
 
-> ## Challenge 1
->
-> Given the following code:
->
-> 
-> ~~~
-> x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
-> names(x) <- c('a', 'b', 'c', 'd', 'e')
-> print(x)
-> ~~~
-> {: .r}
-> 
-> 
-> 
-> ~~~
->   a   b   c   d   e 
-> 5.4 6.2 7.1 4.8 7.5 
-> ~~~
-> {: .output}
->
-> Come up with at least 2 different commands that will produce the following output:
->
-> 
-> ~~~
->   b   c   d 
-> 6.2 7.1 4.8 
-> ~~~
-> {: .output}
->
-> After you find 2 different commands, compare notes with your neighbour. Did you have different strategies?
->
-> > ## Solution to Challenge 1
-> >
-> > Use the `c` function:
-> > ~~~
-> > x[c(2,3,4)]
-> > ~~~
-> > {: .r}
-> > 
-> > ~~~
-> >   b   c   d 
-> > 6.2 7.1 4.8 
-> > ~~~
-> > 
-> > Use the colon operator:
-> > 
-> > ~~~
-> > x[2:4]
-> > ~~~
-> > {: .r}
-> > 
-> > ~~~
-> >   b   c   d 
-> > 6.2 7.1 4.8 
-> > ~~~
-> > {: .output}
-> > 
-> > Select elements by name:
-> > 
-> > ~~~
-> > x[c("b", "c", "d")]
-> > ~~~
-> > {: .r}
-> > 
-> > ~~~
-> >   b   c   d 
-> > 6.2 7.1 4.8 
-> > ~~~
-> > {: .output}
-> > 
-> > Use the `-` (NOT) along with the `c` function to remove elements you don't want:
-> > 
-> > ~~~
-> > x[-c(1,5)]
-> > ~~~
-> > {: .r}
-> > 
-> > ~~~
-> >   b   c   d 
-> > 6.2 7.1 4.8 
-> > ~~~
-> > {: .output}
-> > 
-> > {: .output}
-> >
-> {: .solution}
-{: .challenge}
 
 ## Subsetting by name
 
@@ -388,15 +301,15 @@ To skip (or remove) a single named element:
 
 
 ~~~
-x[-which(names(x) == "a")]
+x[-which(names(x) == "b")]
 ~~~
 {: .r}
 
 
 
 ~~~
-  b   c   d   e 
-6.2 7.1 4.8 7.5 
+  a   c   d   e 
+5.4 7.1 4.8 7.5 
 ~~~
 {: .output}
 
@@ -408,14 +321,14 @@ First this happens:
 
 
 ~~~
-names(x) == "a"
+names(x) == "b"
 ~~~
 {: .r}
 
 
 
 ~~~
-[1]  TRUE FALSE FALSE FALSE FALSE
+[1]  FALSE TRUE FALSE FALSE FALSE
 ~~~
 {: .output}
 
@@ -426,14 +339,14 @@ first name is "a" so that element is TRUE.
 
 
 ~~~
-which(names(x) == "a")
+which(names(x) == "b")
 ~~~
 {: .r}
 
 
 
 ~~~
-[1] 1
+[1] 2
 ~~~
 {: .output}
 
@@ -527,6 +440,95 @@ R will also print out a warning message.
 This difference between `==` and `%in%` is important to remember,
 because it can introduce hard to find and subtle bugs!
 
+> ## Challenge 1
+>
+> Given the following code:
+>
+> 
+> ~~~
+> x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+> names(x) <- c('a', 'b', 'c', 'd', 'e')
+> print(x)
+> ~~~
+> {: .r}
+> 
+> 
+> 
+> ~~~
+>   a   b   c   d   e 
+> 5.4 6.2 7.1 4.8 7.5 
+> ~~~
+> {: .output}
+>
+> Come up with at least 2 different commands that will produce the following output:
+>
+> 
+> ~~~
+>   b   c   d 
+> 6.2 7.1 4.8 
+> ~~~
+> {: .output}
+>
+> After you find 2 different commands, compare notes with your neighbour. Did you have different strategies?
+>
+> > ## Solution to Challenge 1
+> >
+> > Use the `c` function:
+> > ~~~
+> > x[c(2,3,4)]
+> > ~~~
+> > {: .r}
+> > 
+> > ~~~
+> >   b   c   d 
+> > 6.2 7.1 4.8 
+> > ~~~
+> > 
+> > Use the colon operator:
+> > 
+> > ~~~
+> > x[2:4]
+> > ~~~
+> > {: .r}
+> > 
+> > ~~~
+> >   b   c   d 
+> > 6.2 7.1 4.8 
+> > ~~~
+> > {: .output}
+> > 
+> > Select elements by name:
+> > 
+> > ~~~
+> > x[c("b", "c", "d")]
+> > ~~~
+> > {: .r}
+> > 
+> > ~~~
+> >   b   c   d 
+> > 6.2 7.1 4.8 
+> > ~~~
+> > {: .output}
+> > 
+> > Use the `-` (NOT) along with the `c` function to remove elements you don't want:
+> > 
+> > ~~~
+> > x[-c(1,5)]
+> > ~~~
+> > {: .r}
+> > 
+> > ~~~
+> >   b   c   d 
+> > 6.2 7.1 4.8 
+> > ~~~
+> > {: .output}
+> > 
+> > {: .output}
+> >
+> {: .solution}
+{: .challenge}
+
+
 > ## Challenge 2
 >
 > Run the following code to define vector `x` as above:
@@ -606,7 +608,7 @@ because it can introduce hard to find and subtle bugs!
 >{: .output}
 >
 >
-> Can you come up with a command that will only return of the 'a' values and a different command
+> Can you come up with a command that will only return one of the 'a' values and a different command
 > that will return all of the 'a' values? Does your answer differ from your neighbors?
 >
 > > ## Solution to challenge 3

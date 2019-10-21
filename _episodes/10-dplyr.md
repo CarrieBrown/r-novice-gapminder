@@ -412,8 +412,8 @@ gdp_pop_bycontinents_byyear <- gapminder %>%
 > >lifeExp_2countries_bycontinents <- gapminder %>%
 > >    filter(year==2002) %>%
 > >    group_by(continent) %>%
-> >    sample_n(2) %>%
 > >    summarize(mean_lifeExp=mean(lifeExp)) %>%
+> >    sample_n(2) %>%
 > >    arrange(desc(mean_lifeExp))
 > >~~~
 > >{: .r}
